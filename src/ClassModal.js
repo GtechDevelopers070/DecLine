@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Item, Input, Label } from 'native-base';
-import { Modal, Text, TouchableHighlight, View, Button } from 'react-native';
+import { Modal, Text, View, Button } from 'react-native';
 
 const ClassModal = props => {
   return (
@@ -16,13 +16,14 @@ const ClassModal = props => {
         <Form>
           <Item floatingLabel>
             <Label>Class Name</Label>
-            <Input onChange={e => props.onValueChange(e)} />
+            <Input onChangeText={value => props.handleChange(value)} />
           </Item>
           <Button
             title="Submit"
             style={{ backgroundColor: 'green' }}
             onPress={() => {
               props.setModalVisible(false);
+              props.addNewClass(props.newClass)
             }}
           />
         </Form>

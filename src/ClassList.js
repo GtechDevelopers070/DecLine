@@ -10,24 +10,18 @@ import {
   Container
 } from 'native-base';
 
-const ClassList = () => {
+const ClassList = props => {
   return (
     <ScrollView
       style={styles.contentStyle}
       contentContainerStyle={styles.contentContainerStyle}
     >
-      <Button Left rounded bordered style={styles.button}>
-        <Text>CS 61B</Text>
-      </Button>
-      <Button Right rounded bordered style={styles.button}>
-        <Text>CS 61A</Text>
-      </Button>
-      <Button rounded bordered style={styles.button}>
-        <Text>HIST 101</Text>
-      </Button>
-      <Button rounded bordered style={styles.button}>
-        <Text>ECN 101</Text>
-      </Button>
+      {props.allClasses &&
+        props.allClasses.map((oneClass, index) => (
+          <Button key={index} Left rounded bordered style={styles.button}>
+            <Text>{oneClass}</Text>
+          </Button>
+        ))}
     </ScrollView>
   );
 };

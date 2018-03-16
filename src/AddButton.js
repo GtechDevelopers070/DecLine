@@ -17,8 +17,11 @@ const AddButton = props => {
       <Icon name="add" />
       <Text>Add Class</Text>
       <ClassModal
+        newClass={props.newClass}
+        allClasses={props.allClasses}
+        addNewClass={props.addNewClass}
         modalVisible={props.modalVisible}
-        onValueChange={props.onValueChange}
+        handleChange={props.handleChange}
         setModalVisible={props.setModalVisible}
       />
     </Button>

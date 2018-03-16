@@ -25,6 +25,7 @@ export default class Index extends Component {
     super(props);
 
     this.state = {
+      allClasses: ['CS 101','ECON 303','HIST 201'],
       newClass: '',
       isReady: false,
       selectedSem: 'key0',
@@ -48,8 +49,15 @@ export default class Index extends Component {
     this.setState({ modalVisible: visible });
   }
 
-  handleChange(e){
-    this.setState({ newClass: e.target.value })
+  handleChange(event) {
+    this.setState({ newClass: event });
+  }
+
+  addNewClass(name) {
+    classListArray = this.state.allClasses;
+    classListArray.push(name);
+
+    this.setState({ allClasses: classListArray });
   }
 
   render() {
@@ -74,10 +82,13 @@ export default class Index extends Component {
             selectedSemValue={this.state.selectedSem}
             onValueChange={this.onValueChange.bind(this)}
           />
-          <ClassList />
+          <ClassList allClasses={this.state.allClasses} />
           <AddButton
+            newClass={this.state.newClass}
+            allClasses={this.state.allClasses}
             modalVisible={this.state.modalVisible}
-            onValueChange={this.onValueChange.bind(this)}
+            addNewClass={this.addNewClass.bind(this)}
+            handleChange={this.handleChange.bind(this)}
             setModalVisible={this.setModalVisible.bind(this)}
           />
         </Content>
