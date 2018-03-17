@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 150,
-    marginLeft: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginTop: 20,
     justifyContent: 'center'
   },

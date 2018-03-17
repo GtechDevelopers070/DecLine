@@ -6,32 +6,29 @@ const ClassModal = props => {
   return (
     <View style={{ marginTop: 22 }}>
       <Modal
-        animationType="slide"
         transparent={false}
+        animationType="slide"
         visible={props.modalVisible}
-        onDismiss={() => {
+        onRequestClose={() => {
           props.setModalVisible(false);
         }}
-        onRequestClose={() => {
-          alert('Modal has been closed');
-        }}
       >
-        <Header style={{ backgroundColor: '#FFF' }}>
-          <Left>
-            <Button
-              title="Back"
-              style={{ color: '#000' }}
-              onPress={() => {
-                props.setModalVisible(false);
-                props.resetHandler();
-              }}
-            />
-          </Left>
+        <Header style={{ backgroundColor: '#FFF', alignSelf:'flex-start' }}>
+          <Button
+            title="Back"
+            onPress={() => {
+              props.setModalVisible(false);
+              props.resetHandler();
+            }}
+          />
         </Header>
         <Form>
           <Item floatingLabel>
             <Label>Class Name</Label>
-            <Input maxLength={25} onChangeText={value => props.handleChange(value)} />
+            <Input
+              maxLength={25}
+              onChangeText={value => props.handleChange(value)}
+            />
           </Item>
           {props.newClass ? (
             <Button

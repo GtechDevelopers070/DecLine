@@ -70,7 +70,7 @@ export default class Index extends Component {
     }
     return (
       <Container>
-        <Header style={{ backgroundColor: '#EEE' }}>
+        <Header style={{ backgroundColor: '#EEE', height: 70 }}>
           <Left>
             <Button transparent>
               <Icon style={{ color: '#000' }} name="arrow-back" />
