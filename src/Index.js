@@ -25,11 +25,11 @@ export default class Index extends Component {
     super(props);
 
     this.state = {
-      allClasses: ['CS 101', 'ECON 303', 'HIST 201'],
       newClass: '',
       isReady: false,
       selectedSem: 'key0',
-      modalVisible: false
+      modalVisible: false,
+      allClasses: ['CS 101', 'ECON 303', 'HIST 201']
     };
   }
 

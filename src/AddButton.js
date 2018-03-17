@@ -7,8 +7,8 @@ import ClassModal from './ClassModal';
 const AddButton = props => {
   return (
     <Button
-      iconLeft
       success
+      iconLeft
       style={styles.button}
       onPress={() => {
         props.setModalVisible(true);

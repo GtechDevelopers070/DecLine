@@ -13,14 +13,14 @@ const ClassModal = props => {
           props.setModalVisible(false);
         }}
       >
-        <Header style={{ backgroundColor: '#FFF', alignSelf:'flex-start' }}>
+        <Header style={{ backgroundColor: '#FFF', alignSelf: 'flex-start' }}>
           <Button
             title="Back"
             onPress={() => {
               props.setModalVisible(false);
               props.resetHandler();
             }}
-          />
+          />auto
         </Header>
         <Form>
           <Item floatingLabel>
@@ -34,8 +34,8 @@ const ClassModal = props => {
             <Button
               title="Submit"
               onPress={() => {
-                props.setModalVisible(false);
                 props.addNewClass(props.newClass);
+                props.setModalVisible(false);
                 props.resetHandler();
               }}
             />

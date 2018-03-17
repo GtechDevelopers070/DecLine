@@ -7,8 +7,8 @@ const SemesterPicker = props => {
   return (
     <Form>
       <Picker
-        placeholder="Select one"
         mode="dropdown"
+        placeholder="Select one"
         selectedValue={props.selectedSemValue}
         onValueChange={value => {
           props.onValueChange(value);
