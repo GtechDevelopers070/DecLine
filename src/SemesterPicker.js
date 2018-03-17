@@ -9,8 +9,10 @@ const SemesterPicker = props => {
       <Picker
         placeholder="Select one"
         mode="dropdown"
-        selectedSemValue={props.selectedSemValue}
-        onValueChange={props.onValueChange}
+        selectedValue={props.selectedSemValue}
+        onValueChange={value => {
+          props.onValueChange(value);
+        }}
       >
         <Item label="Spring Semester" value="key0" />
         <Item label="Fall Semester" value="key1" />
