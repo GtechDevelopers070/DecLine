@@ -20,7 +20,7 @@ const ClassModal = props => {
               props.setModalVisible(false);
               props.resetHandler();
             }}
-          />auto
+          />
         </Header>
         <Form>
           <Item floatingLabel>
