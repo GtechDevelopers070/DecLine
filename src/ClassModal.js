@@ -23,6 +23,7 @@ const ClassModal = props => {
               style={{ color: '#000' }}
               onPress={() => {
                 props.setModalVisible(false);
+                props.resetHandler();
               }}
             />
           </Left>
