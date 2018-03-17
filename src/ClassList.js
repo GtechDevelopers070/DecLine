@@ -19,7 +19,7 @@ const ClassList = props => {
       {props.allClasses &&
         props.allClasses.map((oneClass, index) => (
           <Button key={index} Left rounded bordered style={styles.button}>
-            <Text>{oneClass}</Text>
+            <Text style={styles.text}>{oneClass}</Text>
           </Button>
         ))}
     </ScrollView>
@@ -37,8 +37,12 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 150,
-    margin: 10,
+    marginLeft: 20,
+    marginTop: 20,
     justifyContent: 'center'
+  },
+  text: {
+    textAlign: 'center'
   }
 });
 

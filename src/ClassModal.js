@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Item, Input, Label } from 'native-base';
 import { Modal, Text, View, Button } from 'react-native';
+import { Form, Item, Input, Label, Header, Left, Icon } from 'native-base';
 
 const ClassModal = props => {
   return (
@@ -9,23 +9,48 @@ const ClassModal = props => {
         animationType="slide"
         transparent={false}
         visible={props.modalVisible}
+        onDismiss={() => {
+          props.setModalVisible(false);
+        }}
         onRequestClose={() => {
           alert('Modal has been closed');
         }}
       >
+        <Header style={{ backgroundColor: '#FFF' }}>
+          <Left>
+            <Button
+              title="Back"
+              style={{ color: '#000' }}
+              onPress={() => {
+                props.setModalVisible(false);
+              }}
+            />
+          </Left>
+        </Header>
         <Form>
           <Item floatingLabel>
             <Label>Class Name</Label>
-            <Input onChangeText={value => props.handleChange(value)} />
+            <Input maxLength={25} onChangeText={value => props.handleChange(value)} />
           </Item>
-          <Button
-            title="Submit"
-            style={{ backgroundColor: 'green' }}
-            onPress={() => {
-              props.setModalVisible(false);
-              props.addNewClass(props.newClass)
-            }}
-          />
+          {props.newClass ? (
+            <Button
+              title="Submit"
+              style={{ backgroundColor: 'green' }}
+              onPress={() => {
+                props.setModalVisible(false);
+                props.addNewClass(props.newClass);
+                props.resetHandler();
+              }}
+            />
+          ) : (
+            <Button
+              title="Submit"
+              style={{ backgroundColor: 'gray' }}
+              onPress={() => {
+                alert('Enter Class Name');
+              }}
+            />
+          )}
         </Form>
       </Modal>
     </View>

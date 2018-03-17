@@ -22,6 +22,7 @@ const AddButton = props => {
         addNewClass={props.addNewClass}
         modalVisible={props.modalVisible}
         handleChange={props.handleChange}
+        resetHandler={props.resetHandler}
         setModalVisible={props.setModalVisible}
       />
     </Button>
@@ -30,7 +31,7 @@ const AddButton = props => {
 
 const styles = StyleSheet.create({
   button: {
-    margin: 10,
+    marginTop: 20,
     alignSelf: 'center'
   }
 });

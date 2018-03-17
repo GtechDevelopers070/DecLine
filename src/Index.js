@@ -25,7 +25,7 @@ export default class Index extends Component {
     super(props);
 
     this.state = {
-      allClasses: ['CS 101','ECON 303','HIST 201'],
+      allClasses: ['CS 101', 'ECON 303', 'HIST 201'],
       newClass: '',
       isReady: false,
       selectedSem: 'key0',
@@ -51,6 +51,10 @@ export default class Index extends Component {
 
   handleChange(event) {
     this.setState({ newClass: event });
+  }
+
+  resetHandler() {
+    this.setState({ newClass: '' });
   }
 
   addNewClass(name) {
@@ -89,6 +93,7 @@ export default class Index extends Component {
             modalVisible={this.state.modalVisible}
             addNewClass={this.addNewClass.bind(this)}
             handleChange={this.handleChange.bind(this)}
+            resetHandler={this.resetHandler.bind(this)}
             setModalVisible={this.setModalVisible.bind(this)}
           />
         </Content>
