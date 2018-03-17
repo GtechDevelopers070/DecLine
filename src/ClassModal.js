@@ -36,7 +36,6 @@ const ClassModal = props => {
           {props.newClass ? (
             <Button
               title="Submit"
-              style={{ backgroundColor: 'green' }}
               onPress={() => {
                 props.setModalVisible(false);
                 props.addNewClass(props.newClass);
@@ -46,7 +45,6 @@ const ClassModal = props => {
           ) : (
             <Button
               title="Submit"
-              style={{ backgroundColor: 'gray' }}
               onPress={() => {
                 alert('Enter Class Name');
               }}
